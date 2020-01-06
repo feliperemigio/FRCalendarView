@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/app/Downloads/calendar-apple-master/Example/FRCalendarView.xcodeproj">
+      location = "group:FRCalendarView.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:FRCalendarView.xcodeproj">
    </FileRef>
 </Workspace>

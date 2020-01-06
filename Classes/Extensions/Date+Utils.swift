@@ -124,7 +124,7 @@ extension Date {
     }
     
     func setUpGregorianCalendar() -> Calendar {
-        var calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
         
         return calendar
     }
