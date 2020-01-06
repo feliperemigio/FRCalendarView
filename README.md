@@ -1,5 +1,5 @@
 ![Swift Version](https://img.shields.io/badge/Swift-5.0-orange.svg)
-# GloboCalendarView  
+# FRCalendarView  
 
 Component to calendar (iOS or tvOS)
 
@@ -12,25 +12,25 @@ You will need CocoaPods and also your project must be targeted fo iOS 10.3 or hi
 
 ## Installation
 
-GloboCalendarView is available through [CocoaPods](https://cocoapods.org). To install
+FRCalendarView is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'GloboCalendarView'
+pod 'FRCalendarView'
 ```
 
 ## How to use
 
-1. Import the GloboCalendarView
+1. Import the FRCalendarView
 
 ```swift 
-import GloboCalendarView
+import FRCalendarView
 ```
 
 2. Configure the CalendarView:
 
 ```swift 
-let calendarView = GloboCalendarView.CalendarView()
+let calendarView = FRCalendarView.CalendarView()
 self.view.addSubview(calendarView)
 
 self.calendarView.frame = CGRect(x: 0,

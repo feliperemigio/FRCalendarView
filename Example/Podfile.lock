@@ -1,16 +1,16 @@
 PODS:
-  - GloboCalendarView (0.1.12)
+  - FRCalendarView (0.1.0)
 
 DEPENDENCIES:
-  - GloboCalendarView (from `../`)
+  - FRCalendarView (from `../`)
 
 EXTERNAL SOURCES:
-  GloboCalendarView:
+  FRCalendarView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GloboCalendarView: 62f7f982a65b46f1bdfe6c77aca5e7bcadc1fc21
+  FRCalendarView: a69a17e234075d4fbba6d6e1738df29b1250ebde
 
-PODFILE CHECKSUM: b92b50acf1381a629cdb46fc8ade90ee987ed1e3
+PODFILE CHECKSUM: 22e2f0c3b257d7e5d49cdea81383cac52a64be9f
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

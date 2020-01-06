@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GloboCalendarView
+import FRCalendarView
 
 final class ViewController: UIViewController {
     
