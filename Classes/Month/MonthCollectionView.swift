@@ -23,7 +23,7 @@ final class MonthCollectionView: UICollectionViewController, UICollectionViewDel
     var maxDate = Calendar.current.date(byAdding: .year, value: 3, to: Date())!
     
     var allowMultipleSelection: Bool = false
-    var availableDays: [Int] = []
+    var availableDays: [Int]? = nil
     
     private let days = 7
     
@@ -78,7 +78,7 @@ final class MonthCollectionView: UICollectionViewController, UICollectionViewDel
             return false
         }
         
-        return self.availableDays.contains(date.day)
+        return self.availableDays?.contains(date.day) ?? true
     }
     
     

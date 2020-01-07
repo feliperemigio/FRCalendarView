@@ -130,7 +130,7 @@ final class CalendarCollectionViewController: UICollectionViewController, UIColl
         }
         
         let firstDate = createDate(withMonthPosition: indexPath.item)
-        let availableDays = self.appearance?.calendarView.dataSource?.dates(at: firstDate).map({$0.day}) ?? []
+        let availableDays = self.appearance?.calendarView.dataSource?.dates(at: firstDate).map({$0.day})
         cell.configure(date: firstDate,
                        allowMultipleSelection: self.allowMultipleSelection,
                        availableDays: availableDays)
