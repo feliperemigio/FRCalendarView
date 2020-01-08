@@ -30,6 +30,7 @@ final class ViewController: UIViewController {
         self.calendarView.appearance?.scrollDirection = .vertical
         self.calendarView.appearance?.separatorHeight = 1
         self.calendarView.appearance?.separatorColor = .white
+        self.calendarView.appearance?.weekDayCharactersLimit = 3
         
         self.calendarView.minDate = Date()
         self.calendarView.maxDate = Calendar.current.date(byAdding: .month, value: 4, to: Date()) ?? Date()

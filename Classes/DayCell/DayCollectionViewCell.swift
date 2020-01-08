@@ -124,7 +124,7 @@ extension DayCollectionViewCell: DayCollectionViewCellProtocol {
     
     func configure(withWeekday weekday: Int) {
         self.date = nil
-        let text = Date().shortDayOfWeekByDay(weekday)
+        let text = Date().shortDayOfWeekByDay(weekday, charactersLimit: self.appearance?.weekDayCharactersLimit ?? 1)
         self.numberLabel.attributedText = NSAttributedString(string: text,
                                                              attributes: self.appearance?.weekdayTextAttributes)
     }

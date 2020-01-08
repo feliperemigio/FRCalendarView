@@ -65,25 +65,27 @@ extension Date {
         return calendar.range(of: .day, in: .month, for: self)!.count
     }
     
-    func shortDayOfWeekByDay(_ day : Int) -> String{
+    func shortDayOfWeekByDay(_ day : Int, charactersLimit: Int) -> String {
+        var dayString = ""
         switch day {
         case 1:
-            return "D"
+            dayString = "Domingo"
         case 2:
-            return "S"
+            dayString = "Segunda-feira"
         case 3:
-            return "T"
+            dayString = "Terça-feira"
         case 4:
-            return "Q"
+            dayString = "Quarta-feira"
         case 5:
-            return "Q"
+            dayString = "Quinta-feira"
         case 6:
-            return "S"
+            dayString = "Sexta-feira"
         case 7:
-            return "S"
+            dayString = "Sábado"
         default: break
         }
-        return ""
+       
+        return String(dayString.prefix(charactersLimit))
     }
     
     func month(_ month : Int) -> String{
