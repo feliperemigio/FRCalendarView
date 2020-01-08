@@ -31,6 +31,8 @@ public final class CalendarViewAppearance: NSObject {
             NSTimeZone.default = timeZone
         }
     }
+    public var separatorHeight: CGFloat = 0 { didSet { self.calendarView.applyAppearance() } }
+    public var separatorColor: UIColor = .gray { didSet { self.calendarView.applyAppearance() } }
     
     public var scrollDirection: UICollectionView.ScrollDirection = .horizontal { didSet { self.calendarView.applyAppearance() } }
     

@@ -28,6 +28,7 @@ final class DayCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         return label
     }()
+    private var borderBottomView: UIView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,6 +65,15 @@ final class DayCollectionViewCell: UICollectionViewCell {
         selectedBetweenView?.anchor(height: self.sizeSelected.height, width: width)
         selectedBetweenView?.anchorCenterYToSuperview()
         self.sendSubviewToBack(selectedBetweenView!)
+    }
+    
+    private func createBorderBottomView() {
+        borderBottomView?.removeFromSuperview()
+        borderBottomView = UIView()
+        borderBottomView?.backgroundColor = self.appearance?.separatorColor
+        self.addSubview(borderBottomView!)
+        borderBottomView?.anchor(top: nil, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, insets: UIEdgeInsets())
+        borderBottomView?.anchor(height: self.appearance?.separatorHeight, width: nil)
     }
 }
 
@@ -137,6 +147,7 @@ extension DayCollectionViewCell: DayCollectionViewCellProtocol {
 extension DayCollectionViewCell: AppearanceProtocol {
     func applyAppearance(appearance: CalendarViewAppearance) {
         self.appearance = appearance
+        self.createBorderBottomView()
     }
 }
 

@@ -24,10 +24,12 @@ final class ViewController: UIViewController {
         self.calendarView.appearance?.weekdayTextAttributes = [.foregroundColor: UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)]
         self.calendarView.appearance?.monthTextAttributes = [.foregroundColor: UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)]
         self.calendarView.appearance?.disabledTextAttributes = [.foregroundColor: UIColor(red: 136/255, green: 136/255, blue: 136/255, alpha: 1)]
-        self.calendarView.appearance?.columnSpacing = 11
+        self.calendarView.appearance?.columnSpacing = 0
         self.calendarView.appearance.monthHeight = 88
         self.calendarView.appearance?.timeZone = TimeZone(abbreviation: "GMT")
         self.calendarView.appearance?.scrollDirection = .vertical
+        self.calendarView.appearance?.separatorHeight = 1
+        self.calendarView.appearance?.separatorColor = .white
         
         self.calendarView.minDate = Date()
         self.calendarView.maxDate = Calendar.current.date(byAdding: .month, value: 4, to: Date()) ?? Date()
