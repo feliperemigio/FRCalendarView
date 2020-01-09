@@ -31,10 +31,11 @@ final class ViewController: UIViewController {
         self.calendarView.appearance?.separatorHeight = 1
         self.calendarView.appearance?.separatorColor = .white
         self.calendarView.appearance?.weekDayCharactersLimit = 3
+        self.calendarView.appearance?.daySelectedCornerRadius = 10
         
         self.calendarView.minDate = Date()
         self.calendarView.maxDate = Calendar.current.date(byAdding: .month, value: 4, to: Date()) ?? Date()
-        self.calendarView.allowMultipleSelection = false
+        self.calendarView.allowMultipleSelection = true
         self.calendarView.currentMonth = Calendar.current.date(byAdding: .month, value: 2, to: Date())!
         self.calendarView.selectedStartDate = Calendar.current.date(byAdding: .month, value: 2, to: Date())!
         self.calendarView.isControlActive = true

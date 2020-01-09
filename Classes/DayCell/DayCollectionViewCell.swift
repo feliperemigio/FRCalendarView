@@ -80,9 +80,15 @@ final class DayCollectionViewCell: UICollectionViewCell {
 extension DayCollectionViewCell: DayCollectionViewCellProtocol {
     
     func select() {
+        let cornerRadius: CGFloat
+        if let daySelectedCornerRadius = self.appearance?.daySelectedCornerRadius{
+            cornerRadius = daySelectedCornerRadius
+        } else {
+            cornerRadius = self.sizeSelected.height / 2
+        }
         selectedView = UIView()
         selectedView?.backgroundColor = self.appearance?.tintColor
-        selectedView?.layer.cornerRadius = self.sizeSelected.height / 2
+        selectedView?.layer.cornerRadius = cornerRadius
         self.addSubview(selectedView!)
         selectedView?.anchorCenterSuperview()
         selectedView?.anchor(height: self.sizeSelected.height, width: self.sizeSelected.width)

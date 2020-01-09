@@ -38,6 +38,8 @@ public final class CalendarViewAppearance: NSObject {
     
     public var scrollDirection: UICollectionView.ScrollDirection = .horizontal { didSet { self.calendarView.applyAppearance() } }
     
+    public var daySelectedCornerRadius: CGFloat? { didSet { self.calendarView.applyAppearance() } }
+    
     var calendarWidth: CGFloat {
         let days = 7
         let columnSpacing = self.columnSpacing
