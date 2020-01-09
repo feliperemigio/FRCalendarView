@@ -32,6 +32,9 @@ final class ViewController: UIViewController {
         self.calendarView.appearance?.separatorColor = .white
         self.calendarView.appearance?.weekDayCharactersLimit = 3
         self.calendarView.appearance?.daySelectedCornerRadius = 10
+        self.calendarView.appearance.dayItemSize = CGSize(width: 56, height: 56)
+        self.calendarView.appearance.backgroundDayBetweenSelectedDatesHeight = 46
+        
         
         self.calendarView.minDate = Date()
         self.calendarView.maxDate = Calendar.current.date(byAdding: .month, value: 4, to: Date()) ?? Date()

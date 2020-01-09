@@ -22,7 +22,10 @@ final class DayCollectionViewCell: UICollectionViewCell {
     private var appearance: CalendarViewAppearance? = nil
     private var selectedView: UIView?
     private var selectedBetweenView: UIView?
-    private let sizeSelected = CGSize(width: 34, height: 34)
+    private var sizeSelected: CGSize {
+        return CGSize(width: self.frame.size.width - 10, height: self.frame.size.height - 10)
+    }
+    
     private let numberLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -60,9 +63,13 @@ final class DayCollectionViewCell: UICollectionViewCell {
     private func createSelectedBackgroundView(withWidth width: CGFloat) {
         selectedBetweenView = UIView()
         selectedBetweenView?.backgroundColor = self.appearance?.tintColor
-        selectedBetweenView?.alpha = 0.7
+        selectedBetweenView?.alpha = 0.6
         self.addSubview(selectedBetweenView!)
-        selectedBetweenView?.anchor(height: self.sizeSelected.height, width: width)
+        if let backgroundDayBetweenSelectedDatesHeight = self.appearance?.backgroundDayBetweenSelectedDatesHeight{
+            selectedBetweenView?.anchor(height: backgroundDayBetweenSelectedDatesHeight - 10, width: width)
+        } else {
+            selectedBetweenView?.anchor(height: self.sizeSelected.height, width: width)
+        }
         selectedBetweenView?.anchorCenterYToSuperview()
         self.sendSubviewToBack(selectedBetweenView!)
     }
