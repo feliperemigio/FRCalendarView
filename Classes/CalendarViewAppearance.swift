@@ -58,11 +58,6 @@ public final class CalendarViewAppearance: NSObject {
         let lines = 7
         let lineSpacing = self.lineSpacing
         let totalSpacing = lineSpacing * CGFloat(lines - 1) + self.monthHeight
-        let contentSize = self.calendarView.bounds.height - totalSpacing
-        let minimumHeight = contentSize / CGFloat(lines)
-        guard self.dayItemSize.height < minimumHeight else {
-            return minimumHeight * CGFloat(lines)
-        }
         
         return (dayItemSize.height * CGFloat(lines) + totalSpacing)
     }
