@@ -33,10 +33,11 @@ public final class MonthCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(date: Date, allowMultipleSelection: Bool = false, availableDays: [Int]?) {
+    func configure(date: Date, allowMultipleSelection: Bool = false, availableDays: [Int]?, eventsDays: [Int]? = nil) {
         self.monthCollectionView?.minDate = date
         self.monthCollectionView?.maxDate = date
         self.monthCollectionView?.availableDays = availableDays
+        self.monthCollectionView?.eventsDays = eventsDays
         self.monthCollectionView?.allowMultipleSelection = allowMultipleSelection
     }
 }

@@ -24,6 +24,7 @@ final class MonthCollectionView: UICollectionViewController, UICollectionViewDel
     
     var allowMultipleSelection: Bool = false
     var availableDays: [Int]? = nil
+    var eventsDays: [Int]? = nil
     
     private let days = 7
     
@@ -81,6 +82,13 @@ final class MonthCollectionView: UICollectionViewController, UICollectionViewDel
         return self.availableDays?.contains(date.day) ?? true
     }
     
+    private func hasEvent(date: Date?) -> Bool {
+        guard let date = date else {
+            return false
+        }
+        
+        return self.eventsDays?.contains(date.day) ?? true
+    }
     
     //MARK: CollectionViewDelegate & CollectionViewDatasource
     
@@ -114,12 +122,19 @@ final class MonthCollectionView: UICollectionViewController, UICollectionViewDel
                 cell.disable()
             }
             
+            if self.hasEvent(date: date)  {
+                cell.shouldDisplayEvents()
+            }
+            
             guard let selectedStart = self.appearance?.calendarView.selectedStartDate else{
                 return cell
             }
             
             guard !self.isBetweenSelection(date: date) else {
                 cell.selectHightlight()
+                if self.hasEvent(date: date)  {
+                    cell.shouldDisplayEvents()
+                }
                 return cell
             }
             
@@ -132,6 +147,12 @@ final class MonthCollectionView: UICollectionViewController, UICollectionViewDel
                 cell.select()
                 cell.selectHalfLeft()
             }
+            
+            if self.hasEvent(date: date)  {
+                cell.shouldDisplayEvents()
+            }
+            
+            
         }
         
         return cell

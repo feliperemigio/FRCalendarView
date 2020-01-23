@@ -53,13 +53,17 @@ final class ViewController: UIViewController {
 }
 
 extension ViewController: CalendarViewDataSource {
-    func dates(at month: Date) -> [Date] {
+    func dates(at month: Date) -> [Date]? {
         return [Calendar.current.date(byAdding: .day, value: -24, to: Date())!,
                 Calendar.current.date(byAdding: .day, value: -23, to: Date())!,
                 Calendar.current.date(byAdding: .day, value: -22, to: Date())!,
                 Calendar.current.date(byAdding: .month, value: 1, to: Date())!,
                 Calendar.current.date(byAdding: .month, value: 2, to: Date())!,
                 Calendar.current.date(byAdding: .month, value: 3, to: Date())!]
+    }
+    
+    func datesWithEvents(at month: Date) -> [Date]? {
+        return [Calendar.current.date(byAdding: .month, value: 1, to: Date())!]
     }
 }
 

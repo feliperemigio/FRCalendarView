@@ -9,8 +9,9 @@
 import UIKit
 import Foundation
 
-public protocol CalendarViewDataSource: AnyObject {
-    func dates(at month: Date) -> [Date]
+@objc public protocol CalendarViewDataSource: AnyObject {
+    @objc optional func dates(at month: Date) -> [Date]?
+    @objc optional func datesWithEvents(at month: Date) -> [Date]?
 }
 
 public protocol CalendarViewDelegate: AnyObject {

@@ -15,6 +15,7 @@ protocol DayCollectionViewCellProtocol: AnyObject {
     func selectHalfRight()
     func selectHightlight()
     func disable()
+    func shouldDisplayEvents()
 }
 
 final class DayCollectionViewCell: UICollectionViewCell {
@@ -22,6 +23,7 @@ final class DayCollectionViewCell: UICollectionViewCell {
     private var appearance: CalendarViewAppearance? = nil
     private var selectedView: UIView?
     private var selectedBetweenView: UIView?
+    private var eventView: UIView?
     private var sizeSelected: CGSize {
         return CGSize(width: self.frame.size.width - 10, height: self.frame.size.height - 10)
     }
@@ -55,6 +57,9 @@ final class DayCollectionViewCell: UICollectionViewCell {
         
         selectedView?.removeFromSuperview()
         selectedView = nil
+        
+        eventView?.removeFromSuperview()
+        eventView = nil
         
         selectedBetweenView?.removeFromSuperview()
         selectedBetweenView = nil
@@ -133,6 +138,29 @@ extension DayCollectionViewCell: DayCollectionViewCellProtocol {
     func disable() {
         self.numberLabel.attributedText = NSAttributedString(string: self.numberLabel.text ?? "",
                                                              attributes: self.appearance?.disabledTextAttributes)
+    }
+    
+    func shouldDisplayEvents() {
+        guard eventView == nil else {
+            if self.selectedView != nil || self.selectedBetweenView != nil {
+                eventView?.backgroundColor = self.appearance?.tintColor != .white ? .white : .black
+            } else {
+                eventView?.backgroundColor = self.appearance?.tintColor
+            }
+            return
+        }
+        
+        eventView = UIView()
+        if self.selectedView != nil || self.selectedBetweenView != nil {
+            eventView?.backgroundColor = self.appearance?.tintColor != .white ? .white : .black
+        } else {
+            eventView?.backgroundColor = self.appearance?.tintColor
+        }
+        eventView?.layer.cornerRadius = 4
+        self.addSubview(eventView!)
+        eventView?.anchor(top:  self.topAnchor, leading: nil, bottom: nil, trailing: self.trailingAnchor, insets: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 10))
+        eventView?.anchor(height: 8, width: 8)
+        self.sendSubviewToBack(eventView!)
     }
     
     func configure(withWeekday weekday: Int) {
