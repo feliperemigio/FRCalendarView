@@ -87,7 +87,7 @@ final class MonthCollectionView: UICollectionViewController, UICollectionViewDel
             return false
         }
         
-        return self.eventsDays?.contains(date.day) ?? true
+        return self.eventsDays?.contains(date.day) ?? false
     }
     
     //MARK: CollectionViewDelegate & CollectionViewDatasource
