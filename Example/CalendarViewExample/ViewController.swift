@@ -34,9 +34,9 @@ final class ViewController: UIViewController {
         self.calendarView.appearance?.daySelectedCornerRadius = 10
         self.calendarView.appearance.dayItemSize = CGSize(width: 56, height: 56)
         self.calendarView.appearance.backgroundDayBetweenSelectedDatesHeight = 46
+        self.calendarView.appearance.shouldScrollToBottom = true
         
-        
-        self.calendarView.minDate = Date()
+        self.calendarView.minDate = Calendar.current.date(byAdding: .year, value: -4, to: Date()) ?? Date()
         self.calendarView.maxDate = Calendar.current.date(byAdding: .month, value: 4, to: Date()) ?? Date()
         self.calendarView.allowMultipleSelection = true
         self.calendarView.currentMonth = Calendar.current.date(byAdding: .month, value: 2, to: Date())!
