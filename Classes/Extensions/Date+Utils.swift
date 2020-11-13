@@ -50,7 +50,7 @@ extension Date {
     }
     
     var shortDate: String {
-        return String(format: "%@ %04d", self.month(self.month), self.year)
+        return String(format: "%@ %04d", self.monthString, self.year)
     }
     
     var firstWeekday: Int {
@@ -66,58 +66,22 @@ extension Date {
     }
     
     func shortDayOfWeekByDay(_ day : Int, charactersLimit: Int) -> String {
-        var dayString = ""
-        switch day {
-        case 1:
-            dayString = "Domingo"
-        case 2:
-            dayString = "Segunda-feira"
-        case 3:
-            dayString = "Terça-feira"
-        case 4:
-            dayString = "Quarta-feira"
-        case 5:
-            dayString = "Quinta-feira"
-        case 6:
-            dayString = "Sexta-feira"
-        case 7:
-            dayString = "Sábado"
-        default: break
-        }
-       
-        return String(dayString.prefix(charactersLimit))
+        let formatter = DateFormatter()
+        formatter.locale = .current
+        guard let weekdays = formatter.weekdaySymbols else { return "" }
+        
+        let dayString = day < weekdays.count ? weekdays[day] : ""
+        
+        return String(dayString.prefix(charactersLimit)).capitalized
     }
     
-    func month(_ month : Int) -> String{
-        switch month {
-        case 1:
-            return "janeiro"
-        case 2:
-            return "fevereiro"
-        case 3:
-            return "março"
-        case 4:
-            return "abril"
-        case 5:
-            return "maio"
-        case 6:
-            return "junho"
-        case 7:
-            return "julho"
-        case 8:
-            return "agosto"
-        case 9:
-            return "setembro"
-        case 10:
-            return "outubro"
-        case 11:
-            return "novembro"
-        case 12:
-            return "dezembro"
-            
-        default: break
-        }
-        return ""
+    var monthString: String {
+        let formatter = DateFormatter()
+        formatter.locale = .current
+        formatter.dateFormat = "LLLL"
+        formatter.locale = Locale.current
+        let month = formatter.string(from: self)
+        return month.capitalized
     }
     
     func equalsDay(date: Date) -> Bool {
@@ -126,8 +90,8 @@ extension Date {
     }
     
     func setUpGregorianCalendar() -> Calendar {
-        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-        
+        var calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        calendar.locale = .current
         return calendar
     }
     

@@ -111,7 +111,7 @@ final class MonthCollectionView: UICollectionViewController, UICollectionViewDel
         }
         
         if self.isWeekday(position: indexPath.item){
-            cell.configure(withWeekday: indexPath.item + 1)
+            cell.configure(withWeekday: indexPath.item)
         } else if self.isBlankDay(indexPath: indexPath) {
             cell.configure(withDate: nil)
         } else {

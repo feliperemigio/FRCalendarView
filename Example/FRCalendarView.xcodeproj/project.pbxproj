@@ -29,6 +29,10 @@
 		1CC06CD724A7FDE6C00EF717 /* Pods-FRCalendarViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRCalendarViewExample.release.xcconfig"; path = "Target Support Files/Pods-FRCalendarViewExample/Pods-FRCalendarViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		42D557511B99E85A7961E5D8 /* Pods-FRCalendarViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRCalendarViewExample.debug.xcconfig"; path = "Target Support Files/Pods-FRCalendarViewExample/Pods-FRCalendarViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		5651A970E24A4134AED65543 /* Pods_FRCalendarViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FRCalendarViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0BD920B255EC54C00223B1D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		C0BD920C255EC54C00223B1D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		C0BD920F255EC57800223B1D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		C0BD9210255EC57900223B1D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA071CCA235A3E3900F093E7 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		FA071CCB235A3E3900F093E7 /* String+Formatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Formatting.swift"; sourceTree = "<group>"; };
 		FA071CCC235A3E3900F093E7 /* Date+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				es,
 			);
 			mainGroup = FA62721F233E84F30011D686;
 			productRefGroup = FA62722A233E84F30011D686 /* Products */;
@@ -369,6 +375,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA62724C233E85500011D686 /* Base */,
+				C0BD920B255EC54C00223B1D /* pt-BR */,
+				C0BD920F255EC57800223B1D /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -377,6 +385,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA627251233E85520011D686 /* Base */,
+				C0BD920C255EC54C00223B1D /* pt-BR */,
+				C0BD9210255EC57900223B1D /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -388,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -452,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
